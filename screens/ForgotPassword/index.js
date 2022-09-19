@@ -1,0 +1,85 @@
+import { StatusBar } from "expo-status-bar";
+import {
+  StyleSheet,
+  Image,
+  Text,
+  View,
+  ScrollView,
+  KeyboardAvoidingView,
+  Platform,
+  TouchableWithoutFeedback,
+  Keyboard,
+  TouchableOpacity,
+} from "react-native";
+import Btns from "../../compoment/btn";
+import Ips from "../../compoment/input";
+import Ipspass from "../../compoment/inputpass";
+import Logos from "../../compoment/logo";
+import Btnback from "../../compoment/btnback";
+
+export default function ForgotPassword({ navigation }) {
+  return (
+    <View style={styles.container}>
+      <View style={styles.btnback}>
+        <Btnback
+          color="#81d3e3"
+          Text="Sign In"
+          onPress={() => {
+            navigation.goBack();
+          }}
+        ></Btnback>
+      </View>
+      {/* <View style={styles.btnback}><TouchableOpacity onPress={() => { navigation.goBack() }} >
+        <Image source={require('../../img/BackMini.png')}></Image>
+      </TouchableOpacity></View> */}
+      <View style={styles.viewtop}>
+        <Text style={styles.titleText}>Sign In</Text>
+      </View>
+      <View style={styles.viewtop1}>
+        <Ips Text="Email" placeholder="Username" />
+      </View>
+      <View style={styles.btn}>
+        <Btns color="#D4F1F4" Text="Search"></Btns>
+        {/* <Text style={styles.ortext}>OR</Text> */}
+      </View>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "",
+    alignItems: "center",
+    // justifyContent: 'center',
+  },
+  btnback: {
+    alignSelf: "flex-start",
+    marginTop: 20,
+  },
+  titleText: {
+    fontSize: 50,
+    // fontWeight: "bold"
+    color: "blue",
+  },
+  tText: {
+    fontSize: 20,
+  },
+  viewtop: {
+    margin: 50,
+  },
+  viewtop1: {
+    margin: 8,
+  },
+  ortext: {
+    fontSize: 40,
+    fontWeight: "bold",
+    margin: 20,
+    alignItems: "center",
+  },
+  btn: {
+    // justifyContent: "center",
+
+    paddingHorizontal: 10,
+  },
+});
